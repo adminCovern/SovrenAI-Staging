@@ -1,0 +1,47 @@
+{
+    "folders": [
+        {
+            "name": "Sovren AI Workspace",
+            "path": "."
+        },
+        {
+            "name": "Frontend",
+            "path": "./frontend"
+        },
+        {
+            "name": "Backend",
+            "path": "./backend"
+        },
+        {
+            "name": "Shared",
+            "path": "./shared"
+        }
+    ],
+    "settings": {
+        "typescript.preferences.includePackageJsonAutoImports": "on",
+        "typescript.suggest.autoImports": true,
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll.eslint": "explicit"
+        },
+        "files.exclude": {
+            "**/node_modules": true,
+            "**/dist": true,
+            "**/.next": true,
+            "**/__pycache__": true,
+            "**/*.pyc": true
+        }
+    },
+    "extensions": {
+        "recommendations": [
+            "ms-vscode.vscode-typescript-next",
+            "esbenp.prettier-vscode",
+            "dbaeumer.vscode-eslint",
+            "ms-python.python",
+            "ms-python.black-formatter",
+            "ms-python.pylint",
+            "bradlc.vscode-tailwindcss",
+            "ms-vscode.vscode-json"
+        ]
+    }
+}

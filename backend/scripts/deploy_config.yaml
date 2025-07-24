@@ -1,0 +1,230 @@
+# SOVREN AI Enterprise Deployment Configuration
+# Production-ready configuration with security and monitoring
+
+# Security Configuration
+security:
+  # Security key (should be set via environment variable in production)
+  security_key: "${SOVREN_SECURITY_KEY}"
+  
+  # Allowed IP addresses for service communication
+  allowed_ips:
+    - "127.0.0.1"
+    - "localhost"
+    - "::1"
+  
+  # Service authentication settings
+  service_auth:
+    token_expiry_hours: 24
+    max_failed_attempts: 3
+    lockout_duration_minutes: 30
+  
+  # Network security
+  network:
+    bind_address: "0.0.0.0"
+    max_connections: 1000
+    connection_timeout: 30
+    ssl_enabled: true
+    ssl_cert_path: "/data/sovren/certs/server.crt"
+    ssl_key_path: "/data/sovren/certs/server.key"
+
+# Service Configuration
+services:
+  consciousness:
+    enabled: true
+    critical: true
+    startup_timeout: 45
+    memory_limit_mb: 4096
+    cpu_limit_percent: 25.0
+    health_check_interval: 30
+    restart_policy: "always"
+    max_restart_attempts: 3
+    
+  bayesian:
+    enabled: true
+    critical: true
+    startup_timeout: 30
+    memory_limit_mb: 2048
+    cpu_limit_percent: 20.0
+    health_check_interval: 30
+    restart_policy: "always"
+    max_restart_attempts: 3
+    
+  voice:
+    enabled: true
+    critical: true
+    startup_timeout: 60
+    memory_limit_mb: 3072
+    cpu_limit_percent: 30.0
+    health_check_interval: 15
+    restart_policy: "always"
+    max_restart_attempts: 5
+    port: 8000
+    
+  api:
+    enabled: true
+    critical: true
+    startup_timeout: 30
+    memory_limit_mb: 1024
+    cpu_limit_percent: 15.0
+    health_check_interval: 10
+    restart_policy: "always"
+    max_restart_attempts: 3
+    port: 8001
+    
+  mcp:
+    enabled: true
+    critical: false
+    startup_timeout: 20
+    memory_limit_mb: 512
+    cpu_limit_percent: 10.0
+    health_check_interval: 60
+    restart_policy: "on-failure"
+    max_restart_attempts: 2
+    port: 9999
+
+# Monitoring Configuration
+monitoring:
+  enabled: true
+  health_check_interval: 30
+  metrics_collection: true
+  alerting:
+    enabled: true
+    critical_service_failure: true
+    resource_usage_threshold: 80
+    response_time_threshold: 5000  # milliseconds
+  
+  logging:
+    level: "INFO"
+    format: "json"
+    rotation:
+      max_size_mb: 100
+      max_files: 10
+      retention_days: 30
+    
+  metrics:
+    prometheus_enabled: true
+    prometheus_port: 9090
+    custom_metrics: true
+
+# Resource Management
+resources:
+  # Memory limits
+  memory:
+    total_limit_gb: 32
+    per_service_limit_mb: 4096
+    swap_enabled: false
+    
+  # CPU limits
+  cpu:
+    total_cores: 288
+    per_service_limit_percent: 50.0
+    affinity_enabled: true
+    
+  # Disk limits
+  disk:
+    data_directory: "/data/sovren"
+    temp_directory: "/data/sovren/temp"
+    log_directory: "/data/sovren/logs"
+    min_free_space_gb: 10
+    
+  # Network limits
+  network:
+    bandwidth_limit_mbps: 1000
+    connection_limit: 10000
+    timeout_seconds: 30
+
+# Performance Configuration
+performance:
+  # GPU configuration
+  gpu:
+    enabled: true
+    memory_fraction: 0.9
+    allow_growth: true
+    per_process_gpu_memory_fraction: 0.1
+    
+  # Threading
+  threading:
+    max_workers: 50
+    thread_timeout: 300
+    enable_thread_monitoring: true
+    
+  # Caching
+  caching:
+    enabled: true
+    max_size_mb: 1024
+    ttl_seconds: 3600
+    
+  # Optimization
+  optimization:
+    jit_compilation: true
+    memory_pooling: true
+    async_io: true
+
+# Deployment Configuration
+deployment:
+  environment: "production"
+  version: "1.0.0"
+  
+  # Rolling updates
+  rolling_update:
+    enabled: true
+    max_unavailable: 1
+    max_surge: 1
+    
+  # Health checks
+  readiness_probe:
+    enabled: true
+    initial_delay_seconds: 10
+    period_seconds: 30
+    timeout_seconds: 5
+    failure_threshold: 3
+    
+  liveness_probe:
+    enabled: true
+    initial_delay_seconds: 30
+    period_seconds: 60
+    timeout_seconds: 10
+    failure_threshold: 3
+
+# Backup and Recovery
+backup:
+  enabled: true
+  schedule: "0 2 * * *"  # Daily at 2 AM
+  retention_days: 30
+  compression: true
+  encryption: true
+  
+  locations:
+    - "/data/sovren/models"
+    - "/data/sovren/config"
+    - "/data/sovren/logs"
+
+# Security Scanning
+security_scanning:
+  enabled: true
+  schedule: "0 3 * * *"  # Daily at 3 AM
+  
+  checks:
+    - "vulnerability_scan"
+    - "dependency_scan"
+    - "secret_scan"
+    - "license_scan"
+    
+  reporting:
+    email_alerts: true
+    webhook_url: "${SECURITY_WEBHOOK_URL}"
+    severity_threshold: "HIGH"
+
+# Compliance
+compliance:
+  enabled: true
+  standards:
+    - "SOC2"
+    - "ISO27001"
+    - "GDPR"
+    
+  audit:
+    enabled: true
+    log_retention_years: 7
+    encryption_at_rest: true
+    encryption_in_transit: true 

@@ -1,0 +1,29 @@
+--- cmake/public/cuda.cmake
++++ cmake/public/cuda.cmake
+@@ -310,6 +310,15 @@
+   set(CMAKE_CUDA_ARCHITECTURES ${CMAKE_CUDA_ARCHITECTURES} CACHE STRING "CUDA architectures to build for")
+ endif()
+ 
++# B200 GPU support - Force sm_100 architecture
++if(TORCH_CUDA_ARCH_LIST MATCHES "10.0")
++  set(CMAKE_CUDA_ARCHITECTURES "10.0")
++  set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -arch=sm_100")
++  set(NVCC_FLAGS "${NVCC_FLAGS} -arch=sm_100")
++  message(STATUS "B200 GPU detected - forcing sm_100 architecture")
++endif()
++
+ # Set CUDA architectures
+ if(CMAKE_CUDA_ARCHITECTURES)
+   set(CMAKE_CUDA_ARCHITECTURES ${CMAKE_CUDA_ARCHITECTURES} CACHE STRING "CUDA architectures to build for")
+@@ -320,6 +329,11 @@
+   set(CMAKE_CUDA_ARCHITECTURES "5.2" CACHE STRING "CUDA architectures to build for")
+ endif()
+ 
++# Override for B200
++if(TORCH_CUDA_ARCH_LIST MATCHES "10.0")
++  set(CMAKE_CUDA_ARCHITECTURES "10.0")
++endif()
++
+ # Set CUDA host compiler
+ if(CMAKE_CUDA_HOST_COMPILER)
+   set(CMAKE_CUDA_HOST_COMPILER ${CMAKE_CUDA_HOST_COMPILER} CACHE STRING "CUDA host compiler") 

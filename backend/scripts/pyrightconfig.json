@@ -1,0 +1,21 @@
+{
+  "include": [
+    "."
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/__pycache__",
+    "**/.*"
+  ],
+  "ignore": [],
+  "reportMissingImports": "warning",
+  "reportMissingTypeStubs": false,
+  "reportMissingModuleSource": false,
+  "pythonVersion": "3.8",
+  "pythonPlatform": "Linux",
+  "typeCheckingMode": "basic",
+  "useLibraryCodeForTypes": true,
+  "stubPath": "./typings",
+  "venvPath": ".",
+  "venv": "venv"
+} 

@@ -1,0 +1,26 @@
+{
+    "include": [
+        "api",
+        "core",
+        "scripts",
+        "tests"
+    ],
+    "exclude": [
+        "**/node_modules",
+        "**/__pycache__"
+    ],
+    "ignore": [
+        "**/typings"
+    ],
+    "reportMissingImports": "none",
+    "reportOptionalMemberAccess": "none",
+    "reportOptionalSubscript": "none",
+    "reportOptionalCall": "none",
+    "reportOptionalIterable": "none",
+    "reportOptionalContextManager": "none",
+    "reportOptionalOperand": "none",
+    "pythonVersion": "3.8",
+    "pythonPlatform": "Linux",
+    "typeCheckingMode": "basic",
+    "useLibraryCodeForTypes": true
+} 

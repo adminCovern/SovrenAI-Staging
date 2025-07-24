@@ -1,0 +1,18 @@
+2025-07-13 21:05:00,970 - sovren-api - INFO - Consciousness engine imported successfully
+2025-07-13 21:05:00,977 - sovren-api - INFO - Bayesian engine imported successfully
+2025-07-13 21:05:07,024 - sovren-api - INFO - Consciousness engine imported successfully
+2025-07-13 21:05:07,031 - sovren-api - INFO - Bayesian engine imported successfully
+2025-07-13 21:05:25,740 - sovren-api - INFO - Consciousness engine imported successfully
+2025-07-13 21:05:25,747 - sovren-api - INFO - Bayesian engine imported successfully
+2025-07-13 21:05:26,410 - sovren-api - INFO - Voice system imported successfully
+2025-07-13 21:05:26,414 - sovren-api - INFO - Approval system imported successfully
+2025-07-13 21:05:26,423 - sovren-api - INFO - Billing system imported successfully
+2025-07-13 21:05:26,484 - sovren-api - INFO - Consciousness engine imported successfully
+2025-07-13 21:05:26,484 - sovren-api - INFO - Bayesian engine imported successfully
+2025-07-13 21:05:26,485 - sovren-api - INFO - Voice system imported successfully
+2025-07-13 21:05:26,485 - sovren-api - INFO - Approval system imported successfully
+2025-07-13 21:05:26,485 - sovren-api - INFO - Billing system imported successfully
+2025-07-13 21:05:26,487 - sovren-api - INFO - Initializing SOVREN AI Systems...
+2025-07-13 21:05:26,487 - sovren-api - INFO - Initializing Consciousness Engine...
+2025-07-13 21:05:26,487 - core.consciousness.consciousness_engine - ERROR - GPU initialization failed: GPU 0 not available
+2025-07-13 21:05:26,487 - sovren-api - ERROR - Initialization failed: Failed to initialize GPUs: GPU 0 not available

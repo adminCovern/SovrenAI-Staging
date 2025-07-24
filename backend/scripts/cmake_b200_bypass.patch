@@ -1,0 +1,27 @@
+--- /usr/local/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake
++++ /usr/local/share/cmake-3.29/Modules/CMakeDetermineCompilerId.cmake
+@@ -800,6 +800,12 @@
+   endif()
+ endif()
+ 
++# B200 GPU bypass - force sm_100 architecture
++if(CMAKE_CUDA_ARCHITECTURES MATCHES "10.0")
++  set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -arch=sm_100")
++  set(CMAKE_CUDA_ARCHITECTURES "sm_100")
++endif()
++
+ # Set the compiler id.
+ set(CMAKE_CUDA_COMPILER_ID "NVIDIA")
+ 
+@@ -810,6 +816,12 @@
+   set(CMAKE_CUDA_COMPILER_VERSION "${CMAKE_CUDA_COMPILER_VERSION_MAJOR}.${CMAKE_CUDA_COMPILER_VERSION_MINOR}")
+ endif()
+ 
++# Force B200 architecture in compiler detection
++if(CMAKE_CUDA_ARCHITECTURES MATCHES "10.0")
++  set(CMAKE_CUDA_FLAGS "${CMAKE_CUDA_FLAGS} -arch=sm_100")
++  set(CMAKE_CUDA_ARCHITECTURES "sm_100")
++endif()
++
+ # Set the compiler vendor.
+ set(CMAKE_CUDA_COMPILER_VENDOR "NVIDIA") 

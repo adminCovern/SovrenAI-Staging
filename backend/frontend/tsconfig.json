@@ -1,0 +1,35 @@
+[object Object]  compilerOptions:[object Object]
+   target:ES2022,
+  lib": ["dom,dom.iterable", es6, "es2022],  allowJs:true,
+ skipLibCheck": true,
+    esModuleInterop": true,
+ allowSyntheticDefaultImports": true,
+  strict": true,
+   forceConsistentCasingInFileNames": true,
+noFallthroughCasesInSwitch": true,
+   module: next",
+   moduleResolution": "node",
+    resolveJsonModule: true,
+    isolatedModules": true,
+  noEmit": true,
+   jsx": react-jsx",
+    baseUrl":src,paths": [object Object]@/*": ["*"],
+     @/components/*": ["components/*"],
+      @/services/*": ["services/*],
+   @/types/*": ["types/*],
+   @/utils/*": ["utils/*],
+   @/hooks/*": ["hooks/*"],
+    @/stores/*": [stores/*"],
+     @/shaders/*: [shaders/*"],
+      @/consciousness/*: ["consciousness/*"]
+    },
+   types:node", three", "webrtc", stats.js]
+  },
+  include":    src",
+   src/**/*",
+    src/**/*.ts",
+  src/**/*.tsx"
+  ],
+  exclude": [
+  node_modules",
+    build,dist 

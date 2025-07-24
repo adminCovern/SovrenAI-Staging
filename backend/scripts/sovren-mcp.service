@@ -1,0 +1,49 @@
+[Unit]
+Description=SOVREN AI Enterprise MCP Server
+Documentation=https://github.com/sovren-ai/sovren-ai
+After=network.target
+Wants=network.target
+
+[Service]
+Type=simple
+User=sovren
+Group=sovren
+WorkingDirectory=/opt/sovren-ai
+Environment=SOVREN_JWT_SECRET=your-secure-jwt-secret-change-this
+Environment=SOVREN_HOST=0.0.0.0
+Environment=SOVREN_PORT=9999
+Environment=SOVREN_MAX_CONNECTIONS=100
+Environment=SOVREN_RATE_LIMIT_PER_MINUTE=100
+Environment=SOVREN_ENABLE_TLS=false
+Environment=SOVREN_LOG_LEVEL=INFO
+Environment=SOVREN_LOG_FORMAT=json
+Environment=SOVREN_MAX_MEMORY_MB=2048
+Environment=SOVREN_METRICS_PORT=9090
+ExecStart=/usr/bin/python3 /opt/sovren-ai/scripts/enterprise_mcp_server.py
+ExecReload=/bin/kill -HUP $MAINPID
+Restart=always
+RestartSec=10
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=sovren-mcp
+
+# Security settings
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/sovren-ai/logs /opt/sovren-ai/config
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictRealtime=true
+RestrictSUIDSGID=true
+LockPersonality=true
+MemoryDenyWriteExecute=true
+
+# Resource limits
+LimitNOFILE=65536
+LimitNPROC=4096
+
+[Install]
+WantedBy=multi-user.target 

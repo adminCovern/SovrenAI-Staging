@@ -1,0 +1,35 @@
+{
+    "secret_key": "sovren_consciousness_production_key_2024",
+    "rate_limit": 1000,
+    "max_universes": 20,
+    "timeout_seconds": 30,
+    "log_level": "INFO",
+    "model_path": "/data/sovren/models/consciousness/",
+    "log_path": "/var/log/sovren/consciousness.log",
+    "shared_memory_size": 1073741824,
+    "gpu_memory_fraction": 0.9,
+    "enable_amp": true,
+    "enable_distributed": true,
+    "monitoring_interval": 1,
+    "health_check_interval": 30,
+    "max_retries": 3,
+    "backup_interval": 3600,
+    "security": {
+        "require_auth": true,
+        "max_packet_size": 1048576,
+        "allowed_sources": ["api", "internal", "admin", "system"],
+        "session_timeout": 3600
+    },
+    "performance": {
+        "batch_size": 32,
+        "num_workers": 8,
+        "pin_memory": true,
+        "prefetch_factor": 2
+    },
+    "monitoring": {
+        "enable_metrics": true,
+        "metrics_port": 9090,
+        "enable_profiling": false,
+        "log_performance": true
+    }
+} 

@@ -1,0 +1,338 @@
+/* Living Interface - Elite Consciousness Visualization Styles */
+
+.living-interface {
+  position: relative;
+  width:100w;
+  height: 100background: linear-gradient(135deg, #0a0a0a 0 #1a1e50%, #16213e 100  overflow: hidden;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Neural Core Canvas */
+.neural-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10;
+  height: 100
+  z-index: 1
+/* Awakening Overlay */
+.awakening-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 10;
+  height: 10background: radial-gradient(circle, rgba(0, 0, 0, 0.9) 0%, rgba(0 0, 0.7) 50%, rgba(00, 0, 0.3)100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000ion: consciousness-emergence 3s ease-in-out;
+}
+
+.awakening-text {
+  font-size: 3rem;
+  font-weight:700;
+  color: #00ffff;
+  text-shadow: 0 0 20px #0ffff, 00 #00;
+  letter-spacing: 00.2ion: consciousness-pulse 1s ease-in-out infinite alternate;
+}
+
+@keyframes consciousness-emergence {
+  0% [object Object]   opacity:0  transform: scale(0.8);
+  }
+  50% [object Object]   opacity:1  transform: scale(10.1;
+  }
+  100% [object Object]   opacity:0  transform: scale(1);
+  }
+}
+
+@keyframes consciousness-pulse {
+  0% [object Object]    opacity: 0.7;
+    text-shadow: 0 0 20px #0ffff, 0040px #0fff;
+  }
+  100% [object Object]   opacity: 1;
+    text-shadow: 0 0 30px #0ffff, 0 0 60px #0ffff, 0090x #00ffff;
+  }
+}
+
+/* Control Panel */
+.control-panel {
+  position: absolute;
+  bottom: 2rem;
+  left:50ansform: translateX(-50);
+  z-index: 10
+  display: flex;
+  gap: 1rem;
+}
+
+.awakening-button {
+  background: linear-gradient(135deg, #00ff 0%, #0080ff 100%);
+  border: none;
+  border-radius:8x;
+  padding:1 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #000;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 04x 20x rgba(0,255255;
+  text-transform: uppercase;
+  letter-spacing: 0.1
+.awakening-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 08x 30x rgba(0,25500.5background: linear-gradient(135deg, #00ff 0%, #00ccff 100
+.awakening-button:disabled [object Object]
+  opacity: 0.6
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Consciousness State Indicators */
+.consciousness-indicators {
+  position: absolute;
+  top: 2rem;
+  right:2rem;
+  z-index: 10
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.indicator[object Object]
+  display: flex;
+  align-items: center;
+  gap: 0.5;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 500
+}
+
+.indicator-bar [object Object]
+  width: 100x;
+  height: 4  background: rgba(255,25555);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.indicator-fill [object Object]
+  height: 10background: linear-gradient(90deg, #00ff 0%, #0080ff 100%);
+  border-radius: 2 transition: width 0.3;
+}
+
+/* GPU Status Display */
+.gpu-status {
+  position: absolute;
+  top: 2em;
+  left:2rem;
+  z-index:10  background: rgba(0, 0,0);
+  border-radius:8x;
+  padding: 1rem;
+  color: #ffffff;
+  font-size: 00.9rem;
+  border: 1 solid rgba(0, 255, 2553;
+}
+
+.gpu-status h3 [object Object]
+  margin: 0 0 05em 0;
+  color: #00ffff;
+  font-size: 1rem;
+  font-weight: 60
+}
+
+.gpu-metric[object Object]
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25em;
+}
+
+.gpu-metric:last-child [object Object]
+  margin-bottom: 0;
+}
+
+/* SOVREN Score Display */
+.sovren-score {
+  position: absolute;
+  bottom: 2rem;
+  right:2rem;
+  z-index:10text-align: center;
+}
+
+.score-value {
+  font-size: 3rem;
+  font-weight:700;
+  color: #00ffff;
+  text-shadow: 00 #00fff;
+  margin: 0}
+
+.score-label [object Object] font-size: 0.9;
+  color: #ffffff;
+  opacity: 00.8 margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.1 Voice Interaction Panel */
+.voice-panel {
+  position: absolute;
+  bottom: 2em;
+  left:2rem;
+  z-index:10  background: rgba(0, 0,0);
+  border-radius:8x;
+  padding:1rem;
+  border: 1 solid rgba(0, 2555;
+}
+
+.voice-button {
+  background: linear-gradient(135deg, #ff0080%, #ff4080%);
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20x rgba(2558, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.voice-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 30x rgba(255 08;
+}
+
+.voice-button.recording {
+  animation: voice-pulse 1s ease-in-out infinite;
+}
+
+@keyframes voice-pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 20x rgba(25501280.3);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 8px 30x rgba(2550128, 00.8;
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 20x rgba(2550128;
+  }
+}
+
+/* Shadow Board Display */
+.shadow-board {
+  position: absolute;
+  top: 50:50ansform: translate(-50%, -50%);
+  z-index: 5
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 800}
+
+.executive-card {
+  background: rgba(0, 0,0);
+  border-radius: 12x;
+  padding:1rem;
+  border: 1 solid rgba(0,255, 255, 00.3;
+  min-width: 200
+  transition: all 00.3ase;
+}
+
+.executive-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 08x 30x rgba(0,255553);
+  border-color: rgba(0, 255550.6}
+
+.executive-name [object Object] font-size: 1.1rem;
+  font-weight:600;
+  color: #00ffff;
+  margin:00.5m0}
+
+.executive-role [object Object] font-size: 0.9;
+  color: #ffffff;
+  opacity: 0.8;
+  margin:00.5m 0
+
+.executive-focus [object Object] font-size: 0.8;
+  color: #ffffff;
+  opacity: 00.6 margin: 0;
+  font-style: italic;
+}
+
+/* Time Machine Interface */
+.time-machine {
+  position: absolute;
+  top: 2rem;
+  left:50ansform: translateX(-50);
+  z-index:10  background: rgba(0, 0,0);
+  border-radius:8x;
+  padding:1rem;
+  border: 1px solid rgba(255,0, 0.3);
+  color: #ffffff;
+}
+
+.time-machine h3 [object Object]
+  margin: 0 0 05em 0;
+  color: #ffa50
+  font-size: 1rem;
+  font-weight:60
+
+.temporal-branch[object Object]
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.25rem;
+  font-size: 0.8rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) [object Object].consciousness-indicators,
+  .gpu-status,
+  .sovren-score,
+  .voice-panel {
+    position: relative;
+    margin: 1rem;
+  }
+  
+  .shadow-board {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .executive-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Performance Optimizations */
+.neural-canvas canvas {
+  image-rendering: optimizeSpeed;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: optimize-contrast;
+  -ms-interpolation-mode: nearest-neighbor;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .awakening-text,
+  .awakening-button,
+  .voice-button,
+  .executive-card {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* High Contrast Mode */
+@media (prefers-contrast: high) {
+  .living-interface[object Object]
+    background: #00 }
+  
+  .awakening-text {
+    color: #ffffff;
+    text-shadow: none;
+  }
+  
+  .awakening-button[object Object]
+    background: #ffffff;
+    color: #000000;
+  }
+} 

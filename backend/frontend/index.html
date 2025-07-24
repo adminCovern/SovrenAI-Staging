@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="SOVREN AI - Your Digital Chief of Staff. Transform your business with AI-powered insights and automation."
+    />
+    <meta name="keywords" content="AI, artificial intelligence, business automation, digital chief of staff, SOVREN" />
+    <meta name="author" content="SOVREN AI" />
+    <meta property="og:title" content="SOVREN AI - Digital Chief of Staff" />
+    <meta property="og:description" content="Transform your business with AI-powered insights and automation." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sovrenai.app" />
+    <meta property="og:image" content="https://sovrenai.app/logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SOVREN AI - Digital Chief of Staff" />
+    <meta name="twitter:description" content="Transform your business with AI-powered insights and automation." />
+    <meta name="twitter:image" content="https://sovrenai.app/logo.png" />
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+    
+    <!-- Preconnect to API -->
+    <link rel="preconnect" href="https://sovrenai.app" />
+    <link rel="dns-prefetch" href="https://sovrenai.app" />
+    
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    
+    <title>SOVREN AI - Digital Chief of Staff</title>
+    
+    <!-- Global CSS Variables -->
+    <style>
+      :root {
+        --primary-color: #1a1a2e;
+        --secondary-color: #16213e;
+        --accent-color: #0f3460;
+        --highlight-color: #e94560;
+        --text-primary: #ffffff;
+        --text-secondary: #b8b8b8;
+        --background-primary: #0f0f23;
+        --background-secondary: #1a1a2e;
+        --border-color: #2a2a3e;
+        --success-color: #4ade80;
+        --warning-color: #fbbf24;
+        --error-color: #f87171;
+      }
+      
+      * {
+        box-sizing: border-box;
+      }
+      
+      body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        background-color: var(--background-primary);
+        color: var(--text-primary);
+      }
+      
+      code {
+        font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+          monospace;
+      }
+      
+      /* Loading animation */
+      .loading {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      }
+      
+      .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 3px solid var(--border-color);
+        border-top: 3px solid var(--highlight-color);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+      
+      @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+    </style>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run SOVREN AI.</noscript>
+    <div id="root">
+      <!-- Loading screen while React loads -->
+      <div class="loading">
+        <div class="loading-spinner"></div>
+      </div>
+    </div>
+    
+    <!-- Environment configuration -->
+    <script>
+      window.SOVREN_CONFIG = {
+        API_URL: 'https://sovrenai.app/api',
+        WS_URL: 'wss://sovrenai.app/ws',
+        ENVIRONMENT: 'production',
+        VERSION: '1.0.0'
+      };
+    </script>
+  </body>
+</html> 

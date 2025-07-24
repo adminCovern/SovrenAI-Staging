@@ -1,0 +1,8 @@
+{
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/scripts",
+        "${env:USERPROFILE}/AppData/Roaming/Python/Python311/site-packages"
+    ],
+    "python.defaultInterpreterPath": "${env:USERPROFILE}/AppData/Local/Programs/Python/Python311/python.exe",
+    "git.ignoreLimitWarning": true
+} 
