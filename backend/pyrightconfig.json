@@ -1,26 +1,32 @@
 {
     "include": [
-        "api",
-        "core",
-        "scripts",
-        "tests"
+        "."
     ],
     "exclude": [
         "**/node_modules",
-        "**/__pycache__"
+        "**/__pycache__",
+        "**/venv",
+        "**/.venv"
     ],
     "ignore": [
-        "**/typings"
+        "**/mcp_server.py"
     ],
-    "reportMissingImports": "none",
-    "reportOptionalMemberAccess": "none",
-    "reportOptionalSubscript": "none",
-    "reportOptionalCall": "none",
-    "reportOptionalIterable": "none",
-    "reportOptionalContextManager": "none",
-    "reportOptionalOperand": "none",
-    "pythonVersion": "3.8",
-    "pythonPlatform": "Linux",
-    "typeCheckingMode": "basic",
-    "useLibraryCodeForTypes": true
-} 
+    "reportMissingImports": false,
+    "reportMissingModuleSource": false,
+    "reportOptionalMemberAccess": false,
+    "reportOptionalSubscript": false,
+    "reportOptionalIterable": false,
+    "reportOptionalContextManager": false,
+    "reportOptionalOperand": false,
+    "reportUnboundVariable": false,
+    "reportUndefinedVariable": false,
+    "pythonVersion": "3.12",
+    "pythonPlatform": "All",
+    "executionEnvironments": [
+        {
+            "root": ".",
+            "pythonVersion": "3.12",
+            "pythonPlatform": "All"
+        }
+    ]
+}

@@ -1,0 +1,39 @@
+# FreeSWITCH Dependencies Installation Commands
+# Copy and paste these commands one by one on your Ubuntu server
+
+# First, update package list
+sudo apt update
+
+# Install essential build tools (run this as one command)
+sudo apt install -y build-essential pkg-config autoconf automake libtool git wget cmake
+
+# Install core FreeSWITCH dependencies (run this as one command)
+sudo apt install -y libspandsp-dev libpq-dev libopenal-dev unixodbc-dev libmariadb-dev libsqlite3-dev libssl-dev libxml2-dev libcurl4-openssl-dev libjpeg-dev libpng-dev libspeex-dev libspeexdsp-dev libldns-dev libedit-dev libpcre3-dev libyaml-dev
+
+# Install FFmpeg development libraries (run this as one command)
+sudo apt install -y libavcodec-dev libavformat-dev libavutil-dev libswresample-dev libswscale-dev libavfilter-dev libavdevice-dev libpostproc-dev
+
+# Install additional audio/video codecs (run this as one command)
+sudo apt install -y libg7231-dev libamr-dev libamrwb-dev libsndfile1-dev libvorbis-dev libflac-dev libmp3lame-dev libopus-dev
+
+# Install database support (run this as one command)
+sudo apt install -y libhiredis-dev libmemcached-dev
+
+# Install additional utilities (run this as one command)
+sudo apt install -y libuuid1 uuid-dev
+
+# After installation, configure FreeSWITCH with minimal modules
+cd /data/sovren/freeswitch
+
+# Clean previous configuration
+make clean 2>/dev/null || true
+make distclean 2>/dev/null || true
+
+# Configure with minimal modules (run this as one command)
+./configure --enable-core-pgsql-support --disable-all-modules --enable-mod-sofia --enable-mod-commands --enable-mod-dptools --enable-mod-logfile --enable-mod-console --enable-mod-cdr-csv --enable-mod-event-socket --enable-mod-format-cdr --enable-mod-hash --enable-mod-httapi --enable-mod-esf --enable-mod-fsv --enable-mod-cluechoo --enable-mod-voicemail --enable-mod-voicemail-ivr --enable-mod-db --enable-mod-expr --enable-mod-spandsp --enable-mod-g723-1 --enable-mod-amr --enable-mod-amrwb --enable-mod-b64 --enable-mod-sndfile --enable-mod-native-file --enable-mod-tone-stream --enable-mod-vlc --enable-mod-av --enable-mod-avcodec --enable-mod-avformat --enable-mod-swscale --enable-mod-swresample --enable-mod-avfilter --enable-mod-avdevice --enable-mod-postproc --prefix=/usr/local/freeswitch --with-pic --enable-shared --enable-static
+
+# After configuration, compile
+make
+
+# After successful compilation, install
+sudo make install 
