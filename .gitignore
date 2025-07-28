@@ -1,0 +1,17 @@
+Node.js
+node_modules/
+npm-debug.log
+.DS_Store
+.env
+.env.local
+.next/
+out/
+build/
+
+Python
+pycache/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.env
